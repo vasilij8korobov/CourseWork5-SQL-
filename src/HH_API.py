@@ -2,7 +2,7 @@ import requests
 from src.Abstract_HH_API import GetAPI
 
 
-class HeadHuntersCompany(GetAPI):
+class HeadHunterCompany(GetAPI):
     """
     Класс для подключения к API работодателя на HH.ru
     """
@@ -31,7 +31,3 @@ class HeadHunterVacancy(GetAPI):
         get_response = requests.get(self.__url, headers=self.headers, params=self.params)
         data = get_response.json()['items']
         return data
-
-
-check = HeadHuntersCompany
-print(check, sep="\n")
