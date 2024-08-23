@@ -1,6 +1,27 @@
+from config import config
+from src.func import create_database, get_and_save_company_data, get_and_save_vacancy_data, user_request
+
+
 def main():
-    companies_ids = [2458132, 867009, 3533565, 9887868, 1446270, 2729188, 9137365, 4797848, 99985, 4606]
+    """ Запуск программы """
+
+    print("Получаем и сохранение данных...")
+
+    params = config()
+
+    create_database("hh", params)
+    get_and_save_company_data("hh", params)
+    get_and_save_vacancy_data("hh", params)
+    user_request()
+
+    while True:
+        user_choice = input("Хотите сделать еще один запрос?\n").lower()
+        if user_choice == "да":
+            user_request()
+        else:
+            break
+    exit()
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     main()
