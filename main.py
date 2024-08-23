@@ -5,7 +5,7 @@ from src.func import create_database, get_and_save_company_data, get_and_save_va
 def main():
     """ Запуск программы """
 
-    print("Началось получение и сохранение данных...")
+    print("Получаем и сохранение данных...")
 
     params = config()
 
@@ -20,6 +20,7 @@ def main():
             user_request()
         else:
             break
+    exit()
 
 
 if __name__ == "__main__":

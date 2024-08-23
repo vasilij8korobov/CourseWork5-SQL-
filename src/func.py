@@ -82,7 +82,7 @@ def get_and_save_company_data(database_name: str, params: dict):
 
     bar = progressbar.ProgressBar(
         maxval=len(companies_ids),
-        widgets=['Загрузка компании: ', progressbar.Percentage(), ' ', progressbar.Bar(marker='█'), ' ',
+        widgets=['Загрузка компании: ', progressbar.Percentage(), ' ', progressbar.Bar(), ' ',
                  progressbar.ETA()]
     )
     bar.start()
@@ -95,7 +95,7 @@ def get_and_save_company_data(database_name: str, params: dict):
     companies = [Company.from_company_cls(company) for company in companies_list]
     bar = progressbar.ProgressBar(
          maxval=len(companies),
-         widgets=['Сохранение данных: ', progressbar.Percentage(), ' ', progressbar.Bar(marker='█'), ' ',
+         widgets=['Сохранение данных: ', progressbar.Percentage(), ' ', progressbar.Bar(), ' ',
                   progressbar.ETA()]
     )
     bar.start()
@@ -119,7 +119,7 @@ def get_and_save_vacancy_data(database_name: str, params: dict):
 
     bar = progressbar.ProgressBar(
          maxval=len(companies_ids),
-         widgets=['Загрузка вакансии: ', progressbar.Percentage(), ' ', progressbar.Bar(marker='█'), ' ',
+         widgets=['Загрузка вакансии: ', progressbar.Percentage(), ' ', progressbar.Bar(), ' ',
                   progressbar.ETA()]
     )
     bar.start()
@@ -132,7 +132,7 @@ def get_and_save_vacancy_data(database_name: str, params: dict):
     vacancies = [Vacancy.from_vacancy_cls(vacancy) for vacancy in vacancies_list]
     bar = progressbar.ProgressBar(
          maxval=len(vacancies),
-         widgets=['Сохранение данных: ', progressbar.Percentage(), ' ', progressbar.Bar(marker='█'), ' ',
+         widgets=['Сохранение данных: ', progressbar.Percentage(), ' ', progressbar.Bar(), ' ',
                   progressbar.ETA()]
     )
     bar.start()
